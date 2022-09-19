@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Survey Form</title>
+        <title>Helpdesk Ticket Submission</title>
         <link rel="stylesheet" href="style.css">
     <head>
 
@@ -13,11 +13,45 @@
         <p id="description">This form will help our technicians serve you best. Please fill it out to the best of your knowledge.</p>
 
         <form id="survey-form">
-            <input id="name" type="text" placeholder="Name" require>
+            <div id="contact-info">
+                <label id="name-label" for="name">Please enter your full name: </label>
+                <input id="name" type="text" placeholder="John Smith" require>
 
-            <input id="email" type="email" placeholder="Email" require>
+                <label id="email-label" for="email">Please enter your email address: </label>
+                <input id="email" type="email" placeholder="JohnSmith@Ineedhelp.com" require>
 
-            <input id="number" type="number" placeholder="Phone Number" require>
+                <label id="number-label" for="number">Please enter your phone number: </label>
+                <input id="telephone" type="tel" placeholder="XXX-XXX-XXXX" require pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+                <label for="number" id="number-label">Severity Level (1 = Lowest, 5 = Highest): </label>
+                <input id="number" type="number" require min="1" max="5">
+            </div>
+
+            <div id="ticket-info">
+                <label for="dropdown" id="dropdown-label">Please select the type of ticket you are submitting: </label>
+                <select id="dropdown" require>
+                    <option value="Hardware">Hardware</option>
+                    <option value="Software">Software</option>
+                    <option value="Network">Network</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="checkbox" id="checkbox-label">Please select the type of hardware you are submitting: </label>
+                <input type="checkbox" id="checkbox" name="hardware" value="Desktop">Desktop
+                <input type="checkbox" id="checkbox" name="hardware" value="Laptop">Laptop
+                <input type="checkbox" id="checkbox" name="hardware" value="Printer">Printer
+                <input type="checkbox" id="checkbox" name="hardware" value="Other">Other
+
+                <label for="radio" id="radio-label">Please select the type of software you are submitting: </label>
+                <input type="radio" id="radio" name="software" value="Operating System">Operating System
+                <input type="radio" id="radio" name="software" value="Application">Application
+                <input type="radio" id="radio" name="software" value="Other">Other
+
+                <label for="textarea" id="textarea-label">Please describe the issue you are having: </label>
+                <textarea id="textarea" name="textarea" placeholder="Please describe the issue you are having here." require></textarea>
+
+                <input id="submit" type="submit" value="Submit">
+            </div>
         </form>
     </body>
 </html>

@@ -9,22 +9,25 @@
     <head>
 
     <body>
-        <h1 id="title">Mario's Helpdesk Submission Form</h1>
-        <p id="description">This form will help our technicians serve you best. Please fill it out to the best of your knowledge.</p>
+        <h1 id="title">IT Helpdesk Ticket Submission Form</h1>
+        <p id="description">Our helpdesk experts will contact you as soon as one is available. Hang tight!</p>
 
         <form id="survey-form">
             <div id="contact-info">
-                <label id="name-label" for="name">Please enter your full name: </label>
-                <input id="name" type="text" placeholder="John Smith" require>
+                <label id="name-label" for="name">Name: </label>
+                <input id="name" type="text" placeholder="John Smith" required>
 
-                <label id="email-label" for="email">Please enter your email address: </label>
-                <input id="email" type="email" placeholder="JohnSmith@Ineedhelp.com" require>
+                <label id="email-label" for="email">Email: </label>
+                <input id="email" type="email" placeholder="JohnSmith@Ineedhelp.com" required>
 
-                <label id="number-label" for="number">Please enter your phone number: </label>
-                <input id="telephone" type="tel" placeholder="XXX-XXX-XXXX" require pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <label for="number-label" id="number">Severity Level: </label>
+                <input id="number" type="number" required min="1" max="5" placeholder="1-5">
 
-                <label for="number" id="number-label">Severity Level (1 = Lowest, 5 = Highest): </label>
-                <input id="number" type="number" require min="1" max="5">
+                <label id="computer-label" for="computer">Computer ID: </label>
+                <input id="computer" type="number" placeholder="1-9999" min="1" max="9999" required>
+
+                <label id="phone-label" for="phone">Please enter your phone number: </label>
+                <input id="phone" type="tel" placeholder="XXXXXXXXXX" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
             </div>
 
             <div id="ticket-info">
@@ -42,10 +45,34 @@
                 <input type="checkbox" id="checkbox" name="hardware" value="Printer">Printer
                 <input type="checkbox" id="checkbox" name="hardware" value="Other">Other
 
-                <label for="radio" id="radio-label">Please select the type of software you are submitting: </label>
-                <input type="radio" id="radio" name="software" value="Operating System">Operating System
-                <input type="radio" id="radio" name="software" value="Application">Application
-                <input type="radio" id="radio" name="software" value="Other">Other
+                <!-- Program Problem -->
+                <fieldset>
+                    <legend>Select a program you are having difficuly with:</legend>
+                    <div>
+                        <input type="radio" id="mircosoft-word" name="program" value="word">
+                        <label for="mircosoft-word">Microsoft Word</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mircosoft-outlook" name="program" value="outlook">
+                        <label for="mircosoft-outlook">Microsoft Outlook</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mircosoft-excell" name="program" value="excell">
+                        <label for="mircosoft-excell">Microsoft Excell</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="google-chrome" name="program" value="chrome">
+                        <label for="google-chrome">Google Chrome</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="firefox" name="program" value="firefox">
+                        <label for="firefox">Firefox</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="firefox" name="program" value="firefox">
+                        <label for="firefox">Firefox</label>
+                    </div>
+                </fieldset>
 
                 <label for="textarea" id="textarea-label">Please describe the issue you are having: </label>
                 <textarea id="textarea" name="textarea" placeholder="Please describe the issue you are having here." require></textarea>
